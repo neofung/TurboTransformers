@@ -106,6 +106,7 @@ setDebian(){
 	[ "$debianVersion" == '7' ] && sed -i 's/jessie/wheezy/'g /etc/apt/sources.list
 	[ "$debianVersion" == '8' ] && echo -n ""
 	[ "$debianVersion" == '9' ] && sed -i 's/jessie/stretch/'g /etc/apt/sources.list
+	[ "$debianVersion" == '10' ] && sed -i 's/jessie/buster/'g /etc/apt/sources.list
 }
 
 setUbuntu(){
