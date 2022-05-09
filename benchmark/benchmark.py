@@ -35,6 +35,7 @@ from turbo_benchmark_helper import benchmark_turbo_transformers
 from torch_benchmark_helper import benchmark_torch
 from jit_benchmark_helper import benchmark_torch_jit
 from onnx_benchmark_helper import onnxruntime_benchmark_creator
+from tensorflow_benchmark_helper import benchmark_tensorflow
 
 
 def main():
@@ -61,6 +62,8 @@ def main():
         benchmark_torch(**kwargs)
     elif args['--framework'] == 'torch_jit':
         benchmark_torch_jit(**kwargs)
+    elif args['--framework'] == 'tensorflow':
+        benchmark_tensorflow(**kwargs)
     elif args['--framework'] == 'onnxruntime-gpu':
         onnxruntime_benchmark_creator('GPU')(**kwargs)
     elif args['--framework'] == 'onnxruntime-cpu':
